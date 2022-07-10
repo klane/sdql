@@ -1,0 +1,2 @@
+# sdql
+SDQL Python client
