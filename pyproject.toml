@@ -1,0 +1,24 @@
+[project]
+name = "sdql"
+version = "0.1.0"
+description = "SDQL Python client"
+authors = [
+    {name = "Kevin Lane", email = "lane.kevin.a@gmail.com"},
+]
+dependencies = [
+    "requests>=2.28.0",
+]
+requires-python = ">=3.7"
+readme = "README.md"
+license = {text = "MIT"}
+[project.optional-dependencies]
+pandas = [
+    "pandas>=1.1.5",
+]
+
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+
+[build-system]
+requires = ["pdm-pep517>=0.12.0"]
+build-backend = "pdm.pep517.api"
