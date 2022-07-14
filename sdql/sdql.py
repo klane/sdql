@@ -5,6 +5,7 @@ import requests
 
 try:
     from pandas import DataFrame
+
     PANDAS_INSTALLED = True
 except ImportError:
     PANDAS_INSTALLED = False
