@@ -15,7 +15,7 @@ class SDQLError(Exception):
     pass
 
 
-class League(str, Enum):
+class League(Enum):
     NBA = auto()
     WNBA = auto()
     NCAABB = auto()
