@@ -1,1 +1,1 @@
-from .sdql import Leagues
+from .sdql import League
