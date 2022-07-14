@@ -22,6 +22,9 @@ dev = [
     "pre-commit>=2.20.0",
 ]
 
+[tool.pdm.scripts]
+lint = "pre-commit run --all-files"
+
 [build-system]
 requires = ["pdm-pep517>=0.12.0"]
 build-backend = "pdm.pep517.api"
