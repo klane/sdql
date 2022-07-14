@@ -25,3 +25,22 @@ dev = [
 [build-system]
 requires = ["pdm-pep517>=0.12.0"]
 build-backend = "pdm.pep517.api"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.flakeheaven]
+format = "grouped"
+max_complexity = 10
+max_line_length = 88
+show_source = true
+
+[tool.flakeheaven.plugins]
+pycodestyle = ["+*"]
+pyflakes = ["+*"]
+mccabe = ["+*"]
+"flake8-*" = ["+*"]
+flake8-annotations = ["-ANN101"]
