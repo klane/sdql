@@ -1,4 +1,5 @@
 from enum import Enum, auto
+from typing import Union
 
 import requests
 
@@ -30,7 +31,7 @@ class League(Enum):
     ATP = auto()
     WTA = auto()
 
-    def query(self, query, return_df=False):
+    def query(self, query: str, return_df: bool = False) -> Union[DataFrame, dict]:
         url = f'{BASE_URL}/{self.name}/query'
         response = requests.get(url=url, params={'sdql': query})
 
