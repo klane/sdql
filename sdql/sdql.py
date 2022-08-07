@@ -1,6 +1,6 @@
 """Lightweight library for querying SDQL databases at https://sportsdatabase.com/."""
 
-from enum import Enum, auto
+from enum import Enum
 from typing import Union
 
 import requests
@@ -19,22 +19,22 @@ class SDQLError(Exception):
     """SDQL exception."""
 
 
-class League(Enum):
+class League(str, Enum):
     """League pointing to a SDQL database."""
 
-    NBA = auto()
-    WNBA = auto()
-    NCAABB = auto()
-    NFL = auto()
-    NCAAFB = auto()
-    CFL = auto()
-    Danish_Superliga = auto()
-    Scottish_Premiership = auto()
-    FIFA = auto()
-    NHL = auto()
-    MLB = auto()
-    ATP = auto()
-    WTA = auto()
+    NBA = 'NBA'
+    WNBA = 'WNBA'
+    NCAABB = 'NCAABB'
+    NFL = 'NFL'
+    NCAAFB = 'NCAAFB'
+    CFL = 'CFL'
+    DANISH_SUPERLIGA = 'Danish_Superliga'
+    SCOTTISH_PREMIERSHIP = 'Scottish_Premiership'
+    FIFA = 'FIFA'
+    NHL = 'NHL'
+    MLB = 'MLB'
+    ATP = 'ATP'
+    WTA = 'WTA'
 
     def query(self, query: str, return_df: bool = False) -> Union[DataFrame, dict]:
         """Query a SDQL database.
@@ -51,7 +51,7 @@ class League(Enum):
         Raises:
             SDQLError: There was a problem parsing the provided query.
         """
-        url = f'{BASE_URL}/{self.name}/query'
+        url = f'{BASE_URL}/{self.value}/query'
         response = requests.get(url=url, params={'sdql': query})
 
         try:
