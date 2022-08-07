@@ -35,6 +35,9 @@ line-length = 88
 [tool.isort]
 profile = "black"
 
+[tool.pydocstyle]
+convention = "google"
+
 [tool.flakeheaven]
 format = "grouped"
 max_complexity = 10

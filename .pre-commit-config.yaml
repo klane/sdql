@@ -6,6 +6,7 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
       - id: check-ast
+      - id: check-docstring-first
       - id: double-quote-string-fixer
 
   - repo: https://github.com/asottile/pyupgrade
@@ -30,6 +31,11 @@ repos:
     hooks:
       - id: black
         args: [--skip-string-normalization]
+
+  - repo: https://github.com/pycqa/pydocstyle
+    rev: 6.1.1
+    hooks:
+      - id: pydocstyle
 
   - repo: https://github.com/flakeheaven/flakeheaven
     rev: 2.0.0
