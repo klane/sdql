@@ -57,8 +57,8 @@ class League(Enum):
         try:
             data = response.json()
             data = dict(zip(data['headers'], data['groups'][0]['columns']))
-        except Exception:
-            raise SDQLError(f'Error running query: {query}')
+        except Exception as exc:
+            raise SDQLError(f'Error running query: {query}') from exc
 
         if PANDAS_INSTALLED and return_df:
             data = DataFrame(data)
