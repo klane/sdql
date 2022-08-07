@@ -48,5 +48,7 @@ show_source = true
 pycodestyle = ["+*"]
 pyflakes = ["+*"]
 mccabe = ["+*"]
+dlint = ["+*"]
+pylint = ["+*"]
 "flake8-*" = ["+*"]
 flake8-annotations = ["-ANN101"]
